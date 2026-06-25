@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      href="resources/favicon.ico"
+      type="image/x-icon"
+      sizes="96x96"
+    />
+
+    <title>Random Quote | devChallenges.io</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body
+    class="min-h-screen flex flex-col items-center font-outfit bg-board-dark-gray"
+  >
+    <main class="flex flex-col justify-center gap-4 flex-1">
+      <article
+        id="quote-card"
+        class="text-center max-w-md bg-hurricane p-4 rounded-2xl bg-[url(./resources/bg-image-random-quote.svg)]"
+      >
+        <h1 id="author" class="text-cloud-grey text-base text-center"></h1>
+        <p id="quote" class="text-cloud-grey text-2xl text-center"></p>
+      </article>
+      <div class="flex justify-center gap-3">
+        <div>
+          <button
+            id="btn-random"
+            class="flex items-center gap-2.5 text-cloud-grey bg-hurricane px-2 py-2 text-center rounded-lg"
+            type="button"
+          >
+            Random
+            <img
+              src="./resources/regroup.svg"
+              width="24"
+              height="24"
+              alt="regroup icon"
+            />
+          </button>
+        </div>
+        <div>
+          <button
+            id="btn-share"
+            class="flex items-center gap-2.5 text-cloud-grey bg-hurricane px-2 py-2 text-center rounded-lg"
+            type="button"
+          >
+            Share
+            <img
+              src="./resources/link.svg"
+              width="24"
+              height="24"
+              alt="link icon"
+            />
+          </button>
+        </div>
+      </div>
+    </main>
+    <footer class="text-sm text-center mt-4 text-cloud-grey">
+      Coded by
+      <a
+        href="https://www.linkedin.com/in/sebastián-emilio-aguiñada-coto-497a3527b"
+        target="_blank"
+        >Sebastian Aguiñada</a
+      >
+      | Challenge by
+      <a href="https://www.devchallenges.io?ref=challenge" target="_blank"
+        >devChallenges.io</a
+      >.
+    </footer>
+    <script src="./index.js"></script>
+  </body>
+</html>

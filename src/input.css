@@ -1,0 +1,10 @@
+@import url("https://googleapis.com");
+@import "tailwindcss";
+
+@theme {
+  --color-hurricane: #4a556780;
+  --color-light-lavender: #aeb0ff;
+  --color-cloud-grey: #e3e8ef;
+  --color-board-dark-gray: #20293a;
+  --font-outfit: Outfit, sans-serif;
+}
