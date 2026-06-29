@@ -1,6 +1,7 @@
 const d = document,
   $card = d.getElementById("quote-card"),
   $author = d.getElementById("author"),
+  $tags = d.getElementById("tags"),
   $quote = d.getElementById("quote");
 
 const getQuote = async () => {
@@ -12,16 +13,11 @@ const getQuote = async () => {
 
     if (!res.ok) throw { status: res.status, statusText: res.statusText };
 
-    const randomQuote = json[Math.floor(Math.random() * json.length)];
+    const index = Math.floor(Math.random() * json.length);
 
-    for (const tag of randomQuote.tags) {
-      const $span = d.createElement("span");
-      $span.textContent = tag;
-      $author.insertAdjacentElement("afterend", $span);
-    }
+    const randomQuote = json[index];
 
-    $author.textContent = randomQuote.author;
-    $quote.textContent = randomQuote.quote;
+    return randomQuote;
   } catch (err) {
     let message = err.statusText || "An error ocurred";
 
@@ -32,10 +28,30 @@ const getQuote = async () => {
   }
 };
 
-d.addEventListener("DOMContentLoaded", getQuote);
+const showQuote = async () => {
+  $tags.innerHTML = "";
+
+  const quote = await getQuote();
+
+  quote.tags.forEach((tag) => {
+    const $span = d.createElement("span");
+    $span.textContent = tag;
+    $span.classList.add("text-light-lavender", "bg-board-dark-gray");
+    $span.style.padding = "0.5rem 1rem"
+    $span.style.marginInline = "0.3rem"
+    $span.style.borderRadius = "20px"
+    $span.style.border = "1px solid #aeb0ff"
+    $tags.appendChild($span);
+  });
+
+  $author.textContent = quote.author;
+  $quote.textContent = quote.quote;
+};
+
+d.addEventListener("DOMContentLoaded", showQuote());
 
 d.addEventListener("click", (e) => {
   if (e.target.matches("#btn-random")) {
-    getQuote();
+    showQuote();
   }
 });

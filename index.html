@@ -17,13 +17,17 @@
   <body
     class="min-h-screen flex flex-col items-center font-outfit bg-board-dark-gray"
   >
-    <main class="flex flex-col justify-center gap-4 flex-1">
+    <main class="flex flex-col justify-center gap-4 flex-1 mx-4">
       <article
         id="quote-card"
-        class="text-center max-w-md bg-hurricane p-4 rounded-2xl bg-[url(./resources/bg-image-random-quote.svg)]"
+        class="text-center p-4 max-w-md bg-hurricane rounded-2xl bg-[url(./resources/bg-image-random-quote.svg)]"
       >
-        <h1 id="author" class="text-cloud-grey text-base text-center"></h1>
-        <p id="quote" class="text-cloud-grey text-2xl text-center"></p>
+        <h1
+          id="author"
+          class="text-cloud-grey font-bold text-xl text-center"
+        ></h1>
+        <div id="tags" class="my-4 mx-12"></div>
+        <p id="quote" class="text-cloud-grey text-2xl text-center mt-8"></p>
       </article>
       <div class="flex justify-center gap-3">
         <div>
