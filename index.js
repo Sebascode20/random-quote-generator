@@ -4,6 +4,8 @@ const d = document,
   $tags = d.getElementById("tags"),
   $quote = d.getElementById("quote");
 
+let currentQuote = null;
+
 const getQuote = async () => {
   try {
     let res = await fetch(
@@ -32,15 +34,16 @@ const showQuote = async () => {
   $tags.innerHTML = "";
 
   const quote = await getQuote();
+  currentQuote = quote;
 
   quote.tags.forEach((tag) => {
     const $span = d.createElement("span");
     $span.textContent = tag;
     $span.classList.add("text-light-lavender", "bg-board-dark-gray");
-    $span.style.padding = "0.5rem 1rem"
-    $span.style.marginInline = "0.3rem"
-    $span.style.borderRadius = "20px"
-    $span.style.border = "1px solid #aeb0ff"
+    $span.style.padding = "0.5rem 1rem";
+    $span.style.marginInline = "0.3rem";
+    $span.style.borderRadius = "20px";
+    $span.style.border = "1px solid #aeb0ff";
     $tags.appendChild($span);
   });
 
@@ -48,10 +51,29 @@ const showQuote = async () => {
   $quote.textContent = quote.quote;
 };
 
-d.addEventListener("DOMContentLoaded", showQuote());
+const shareQuote = async () => {
+  // Por si la primera cita no esta cargada cuando se da click 
+  if (!currentQuote) return;
+
+  const shareText = `"${currentQuote.quote}" - ${currentQuote.author}`;
+
+  try {
+    await navigator.share({
+      text: shareText,
+    });
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+d.addEventListener("DOMContentLoaded", showQuote);
 
 d.addEventListener("click", (e) => {
   if (e.target.matches("#btn-random")) {
     showQuote();
+  }
+
+  if (e.target.matches("#btn-share")) {
+    shareQuote();
   }
 });

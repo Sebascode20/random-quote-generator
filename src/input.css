@@ -2,9 +2,11 @@
 @import "tailwindcss";
 
 @theme {
-  --color-hurricane: #4a556780;
+  --color-hurricane: #4a556725;
+  --color-hurricane-alternative: #4a556725;
   --color-light-lavender: #aeb0ff;
   --color-cloud-grey: #e3e8ef;
   --color-board-dark-gray: #20293a;
   --font-outfit: Outfit, sans-serif;
+  --background-image-main: url('../resources/bg-image-random-quote.svg');
 }

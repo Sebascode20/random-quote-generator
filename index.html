@@ -3,6 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Generate quotes quickly and for free and share quotes instantly from any device."
+    />
+    <meta
+      name="keywords"
+      content="Quotes generator, free quote generator, generate quotes online, share quotes"
+    />
 
     <link
       rel="icon"
@@ -20,7 +28,7 @@
     <main class="flex flex-col justify-center gap-4 flex-1 mx-4">
       <article
         id="quote-card"
-        class="text-center p-4 max-w-md bg-hurricane rounded-2xl bg-[url(./resources/bg-image-random-quote.svg)]"
+        class="text-center p-4 max-w-136 bg-hurricane rounded-2xl bg-main bg-bottom bg-contain bg-no-repeat md:p-10"
       >
         <h1
           id="author"
@@ -33,7 +41,7 @@
         <div>
           <button
             id="btn-random"
-            class="flex items-center gap-2.5 text-cloud-grey bg-hurricane px-2 py-2 text-center rounded-lg"
+            class="flex items-center gap-2.5 text-cloud-grey bg-hurricane px-2 py-2 text-center rounded-lg xl:cursor-pointer transition duration-300 ease-in-out border-transparent hover:bg-hurricane-alternative"
             type="button"
           >
             Random
@@ -48,7 +56,7 @@
         <div>
           <button
             id="btn-share"
-            class="flex items-center gap-2.5 text-cloud-grey bg-hurricane px-2 py-2 text-center rounded-lg"
+            class="flex items-center gap-2.5 text-cloud-grey bg-hurricane px-2 py-2 text-center rounded-lg xl:cursor-pointer transition duration-300 ease-in-out hover:bg-hurricane-alternative"
             type="button"
           >
             Share
